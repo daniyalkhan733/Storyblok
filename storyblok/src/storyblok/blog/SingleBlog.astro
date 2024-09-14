@@ -1,0 +1,58 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+---
+
+<div class="p-4">
+ 
+        <div {...storyblokEditable(blok)}
+          class="bg-violet-300  rounded-xl p-3 text-black"
+        >
+          <img
+            src={blok?.image}
+            alt="illustration"
+            class="w-[500px] h-[200px] object-cover bg-gray-100 "
+          />
+          <div class="relative p-4 pt-10">
+            <div
+              class="absolute right-4 -top-8 bg-blue-600 px-4 py-0.5 flex flex-col"
+            >
+              <p class="font-bold text-2xl text-white">15</p>
+              <p class="text-sm text-gray-200">May</p>
+            </div>
+            <div class="flex items-center">
+              <span>category</span>
+              <span
+                class="relative px-5 before:absolute before:top-1/2 before:-translate-y-1/2 before:left-1/2 before:-translate-x-1/2 before:h-3 before:w-px before:bg-gray-400"
+              ></span>
+              <span>{
+            blok.title}</span>
+            </div>
+            <h1
+              class="text-xl my-6 font-semibold text-gray-900 dark:text-white"
+            >
+{blok.description}            </h1>
+            <a
+              href="#"
+              class="text-blue-600 dark:text-blue-500 transition hover:text-opacity-90 flex items-center gap-x-3 group"
+            >
+              Read more
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4 transition-all ease-linear group-hover:ml-1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+   
+</div>
